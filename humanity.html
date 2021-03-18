@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sppstify Player</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  
+  <link rel="stylesheet" type="text/css" href="humanity.css">
+  <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <style>
+    /* 
+    태그 제어 ( id, class, name ) ! name = Server 작업할 때 사용
+    id = #, class = . 
+    */
+    #div_1 {
+      background-color: black;
+      color: white;
+    }
+    #div_2 {
+      background-color: white;
+    }
+    #div_3 {
+      background-color: yellow;
+    }
+
+    div.divClass {
+      width: 100px;
+      text-align: center;
+    }
+
+    #div_1 label {
+      color: yellow;
+    }
+    .button {
+      width: 200px;
+      height: 50px;
+      border-radius: 10px;
+      background-color: white;
+      font-size: 2em;
+      
+    }
+    .button:first {
+      float: left;
+    }
+    .button:nth-child(2){
+      float: right;
+    }
+  </style>
+  <script type="text/javascript">
+
+    // document.getElementById('ytplayer')// origin javascript
+    // $('#ytplayer')// jQuery
+
+    // type = prev or next
+    function nextSong(type){
+      
+      var c_url = "https://www.youtube.com/embed/0-q1KafFCLU?autoplay=1" // celebrity url
+      var s_url = "https://www.youtube.com/embed/K_7To_y9IAM?autoplay=1" // sparkle url
+
+      // alert(type)
+
+      if(type == "prev"){
+        $('#ytplayer').attr('src',s_url)
+        $('#song-title').html("Sparkle")
+      } 
+
+      else if(type == "next"){
+        $('#ytplayer').attr('src',c_url)
+        $('#song-title').html("Celebrity")
+      } 
+      
+      else {
+      }
+
+      // return false; //end
+      random_bg_color()
+    }
+
+    function random_bg_color() { 
+      // Get a random number between 64 to 256 
+      // (for getting lighter colors) 
+      let red = Math.floor(Math.random() * 256) + 64; 
+      let green = Math.floor(Math.random() * 256) + 64; 
+      let blue = Math.floor(Math.random() * 256) + 64; 
+      
+      // Construct a color withe the given values 
+      let bgColor = "rgb(" + red + ", " + green + ", " + blue + ")"; 
+      
+      // Set the background to the new color 
+      document.body.style.background = bgColor; 
+    }
+
+  </script>
+</head>
+<body>
+  <!-- id, class = 선택자(Selector) -->
+  <div class="player">
+    <!-- youtube url = https://www.youtube.com/watch?v=0-q1KafFCLU -->
+    <!-- https://youtu.be/0-q1KafFCLU -->
+
+    <!-- 
+    margin: 0px 1px 0px 0px;
+    위, 오른쪽, 아래, 왼쪽 
+
+    margin-left : 10px; -> margin: 0px 0px 0px 10px; - 왼쪽
+    margin-right  !      margin: 0px 10px 0px 10px; - 왼쪽, 오른쪽
+                         margin: 10px; - 전체
+  -->
+    <h1 id="song-title" style="font-size: 3em;">Sparkle</h1>
+    
+    <!-- box-shadow : length > (x, y, blur, spread), inset(선택하면 안쪽에 그림자), color -->
+
+    <div id="main-contents">
+      <div style="width: 315px; float: left;">
+        <iframe id="ytplayer" width="315" height="360" src="https://www.youtube.com/embed/K_7To_y9IAM?autoplay=1"></iframe>
+      </div>
+
+
+
+      <!-- padding : 안쪽 여백 -->
+      <!-- margin : 바깥쪽 여백 -->
+      <div style="width: 315px; float: right; height: 100%; margin-right: 10px;">
+          <h2 id="song-title">Title</h2>
+          <p id="song-content">Description <br>
+          </p>
+      </div>
+      <style>
+        /*    .text = class,  #text = id        */
+        #song-title {
+          text-align: center;
+        }
+
+        #song-content {
+          /* border: 1px solid yellow; */
+          padding-left: 10px;
+          letter-spacing: 1px;
+        }
+
+        .btn {
+          box-shadow: 2px 2px 2px rgb(49, 49, 49);
+        }
+
+        .btn:hover {
+          background-color: rgb(238, 238, 238);
+          cursor: pointer;
+        }
+
+        .btn:active {
+          box-shadow: none;
+        }
+
+        #main-contents {
+          border: 2px solid rgb(223, 214, 255); 
+          width: 640px; 
+          border-radius: 10px; 
+          box-shadow: 5px 5px 5px rgb(49, 49, 49);
+        }
+
+        /* hover : 마우스를 올렸을 때 */
+        #main-contents:hover {
+          width: 700px;
+          height: 400px;
+          transition: 300ms;
+        }
+
+        /* active : 마우스를 클릭하고 있을 때 */
+        #main-contents:active {
+          /* background-color: inherit; */
+          /* box-shadow: 4px 4px 4px inset #444; */
+        }
+
+        /* visited : 마우스를 클릭 하고난 후 */
+        #main-contents:visited {
+          border-color: purple !important;
+        }
+      </style>
+
+
+
+
+    </div>
+    <br><b><br>
+    <div style="width: 640px;">
+      <button id="prev-btn" class="btn button" onclick="nextSong('prev')">Prev</button>
+      <button id="next-btn" class="btn button" onclick="nextSong('next')">Next</button>
+      <!-- onclick = 클릭할 때 ( 마우스를 뗄 때 ) 발생하는 함수 지정 -->
+    </div>
+    <div id="comment" style="margin-top: 20px;">
+      <h3>comment</h3>
+      <input type="text" style="width: 100%;">
+    </div>
+
+</body>
+</html>
