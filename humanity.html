@@ -46,6 +46,30 @@
     .button:nth-child(2){
       float: right;
     }
+    #playlist {
+      text-align: center;
+      height: 275px;
+      overflow-y: auto;
+      /* overflow
+        auto : 컨텐츠가 범위를 벗어날 때에만 스크롤 생성
+        scroll : 컨텐츠가 범위를 벗어나는 것에 상관 없이 스크롤 생성
+        visible : 컨텐츠가 범위를 벗어나도 벗어난 컨텐츠를 그대로 표시
+        hidden : 컨텐츠가 범위를 벗어나면 벗어난 컨텐츠를 안보이게함
+      */
+    }
+
+    .playlist-btn {
+      width: 70%;
+      height: 30px;
+      border-radius: 5px;
+      margin-top: 3px;
+    }
+
+    .song-active {
+      background-color: #444444;
+      color: white;
+    }
+
   </style>
   <script type="text/javascript">
 
@@ -55,27 +79,46 @@
     // type = prev or next
     function nextSong(type){
       
-      var c_url = "https://www.youtube.com/embed/0-q1KafFCLU?autoplay=1" // celebrity url
-      var s_url = "https://www.youtube.com/embed/K_7To_y9IAM?autoplay=1" // sparkle url
+$('.song-active').removeClass('song-active') // song-active 클래스를 모두 지우고
+$('#song-'+type).addClass('song-active') // 파라미터로 넘어온 버튼에만 적용
 
-      // alert(type)
-
-      if(type == "prev"){
-        $('#ytplayer').attr('src',s_url)
-        $('#song-title').html("Sparkle")
-      } 
-
-      else if(type == "next"){
-        $('#ytplayer').attr('src',c_url)
-        $('#song-title').html("Celebrity")
-      } 
+      var s_url = "https://www.youtube.com/embed/K_7To_y9IAM?autoplay=1" // sparkle 
+      var c_url = "https://www.youtube.com/embed/0-q1KafFCLU?autoplay=1" // celebrity 
+      var b_url = "https://www.youtube.com/embed/tXV7dfvSefo?autoplay=1"  //벚꽃엔딩
+      var j_url = "https://www.youtube.com/embed/gdZLi9oWNZg?autoplay=1" // dynamite
       
-      else {
+      var songList = new Array(s_url, c_url, b_url, j_url)
+
+      $('#ytplayer').attr('src',songList[type])
+
+      switch(type){
+          case 0 : $('#song-title').html("Sparkle"); break;
+          case 1 : $('#song-title').html("Celebrity"); break;
+          case 2 : $('#song-title').html("벚꽃엔딩"); break;
+          case 3 : $('#song-title').html("Dynamite"); break;
       }
+
+      random_bg_color()
+    }
+
+    function random_bg_color() { 
+      // Get a random number between 64 to 256 
+      // (for getting lighter colors) 
+      let red = Math.floor(Math.random() * 256) + 64; 
+      let green = Math.floor(Math.random() * 256) + 64; 
+      let blue = Math.floor(Math.random() * 256) + 64; 
+      
+      // Construct a color withe the given values 
+      let bgColor = "rgb(" + red + ", " + green + ", " + blue + ")"; 
+      
+      // Set the background to the new color 
+      document.body.style.background = bgColor; 
+    }
+
 
       // return false; //end
       random_bg_color()
-    }
+    
 
     function random_bg_color() { 
       // Get a random number between 64 to 256 
