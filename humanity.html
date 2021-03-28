@@ -79,13 +79,13 @@
     // type = prev or next
     function nextSong(type){
       
-$('.song-active').removeClass('song-active') // song-active 클래스를 모두 지우고
-$('#song-'+type).addClass('song-active') // 파라미터로 넘어온 버튼에만 적용
+      $('.song-active').removeClass('song-active') // song-active 클래스를 모두 지우고
+      $('#song-'+type).addClass('song-active') // 파라미터로 넘어온 버튼에만 적용
 
       var s_url = "https://www.youtube.com/embed/K_7To_y9IAM?autoplay=1" // sparkle 
-      var c_url = "https://www.youtube.com/embed/0-q1KafFCLU?autoplay=1" // celebrity 
-      var b_url = "https://www.youtube.com/embed/tXV7dfvSefo?autoplay=1"  //벚꽃엔딩
-      var j_url = "https://www.youtube.com/embed/gdZLi9oWNZg?autoplay=1" // dynamite
+      var c_url = "https://www.youtube.com/embed/f3I3Sxw1IGs?autoplay=1" // celebrity 
+      var b_url = "https://www.youtube.com/embed/v8oqbWrP1QY?autoplay=1"  //벚꽃엔딩
+      var j_url = "https://www.youtube.com/embed/_QGIzmtIr3E?autoplay=1" // dynamite
       
       var songList = new Array(s_url, c_url, b_url, j_url)
 
@@ -93,9 +93,9 @@ $('#song-'+type).addClass('song-active') // 파라미터로 넘어온 버튼에�
 
       switch(type){
           case 0 : $('#song-title').html("Sparkle"); break;
-          case 1 : $('#song-title').html("Celebrity"); break;
-          case 2 : $('#song-title').html("벚꽃엔딩"); break;
-          case 3 : $('#song-title').html("Dynamite"); break;
+          case 1 : $('#song-title').html("Keep Changing the World"); break;
+          case 2 : $('#song-title').html("Just the Two of Us"); break;
+          case 3 : $('#song-title').html("Melting"); break;
       }
 
       random_bg_color()
@@ -139,17 +139,7 @@ $('#song-'+type).addClass('song-active') // 파라미터로 넘어온 버튼에�
 <body>
   <!-- id, class = 선택자(Selector) -->
   <div class="player">
-    <!-- youtube url = https://www.youtube.com/watch?v=0-q1KafFCLU -->
-    <!-- https://youtu.be/0-q1KafFCLU -->
 
-    <!-- 
-    margin: 0px 1px 0px 0px;
-    위, 오른쪽, 아래, 왼쪽 
-
-    margin-left : 10px; -> margin: 0px 0px 0px 10px; - 왼쪽
-    margin-right  !      margin: 0px 10px 0px 10px; - 왼쪽, 오른쪽
-                         margin: 10px; - 전체
-  -->
     <h1 id="song-title" style="font-size: 3em;">Sparkle</h1>
     
     <!-- box-shadow : length > (x, y, blur, spread), inset(선택하면 안쪽에 그림자), color -->
@@ -164,9 +154,25 @@ $('#song-'+type).addClass('song-active') // 파라미터로 넘어온 버튼에�
       <!-- padding : 안쪽 여백 -->
       <!-- margin : 바깥쪽 여백 -->
       <div style="width: 315px; float: right; height: 100%; margin-right: 10px;">
-          <h2 id="song-title">Title</h2>
-          <p id="song-content">Description <br>
-          </p>
+        <h2 id="song-title">Playlist</h2>
+          
+        <div id="playlist">
+          <button type="button" id="song-0" class="playlist-btn" onclick="nextSong(0)">Sparkle</button>
+          <button type="button" id="song-1" class="playlist-btn" onclick="nextSong(1)">Keep Changing the World</button>
+          <button type="button" id="song-2" class="playlist-btn" onclick="nextSong(2)">Just the Two of Us</button>
+          <button type="button" id="song-3" class="playlist-btn" onclick="nextSong(3)">Melting</button>
+          <button type="button" class="playlist-btn">empty</button>
+          <button type="button" class="playlist-btn">empty</button>
+          <button type="button" class="playlist-btn">empty</button>
+          <button type="button" class="playlist-btn">empty</button>
+          <button type="button" class="playlist-btn">empty</button>
+          <button type="button" class="playlist-btn">empty</button>
+          <button type="button" class="playlist-btn">empty</button>
+          <button type="button" class="playlist-btn">empty</button>
+          <button type="button" class="playlist-btn">empty</button>
+          <button type="button" class="playlist-btn">empty</button>
+          <button type="button" class="playlist-btn">empty</button>
+        </div>
       </div>
       <style>
         /*    .text = class,  #text = id        */
