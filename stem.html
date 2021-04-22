@@ -78,16 +78,16 @@
     // document.getElementById('ytplayer')// origin javascript
     // $('#ytplayer')// jQuery
 
-    var a_url = "https://www.youtube.com/embed/K_7To_y9IAM?autoplay=1" //humanity1 
-    var b_url = "https://www.youtube.com/embed/f3I3Sxw1IGs?autoplay=1" //humanity2 
-    var c_url = "https://www.youtube.com/embed/v8oqbWrP1QY?autoplay=1"  //humanity3
-    var d_url = "https://www.youtube.com/embed/_QGIzmtIr3E?autoplay=1" //humanity4
-    var e_url = "https://www.youtube.com/embed/ZKff6nOQMA0?autoplay=1" //humanity5
-    var f_url = "https://www.youtube.com/embed/eegWzglBMh0?autoplay=1" //humanity6
-    var g_url = "https://www.youtube.com/embed/hAwA3BaI56Y?autoplay=1" //humanity7
-    var h_url = "https://www.youtube.com/embed/jG8fg3hsGq0?autoplay=1" //humanity8
-    var i_url = "https://www.youtube.com/embed/jyaNXb7viSk?autoplay=1" //humanity9
-    var j_url = "https://www.youtube.com/embed/SXSF1QZA6Wo?autoplay=1" //humanity10
+    var a_url = "https://www.youtube.com/embed/OE140zsQ08I?autoplay=1" //humanity1 
+    var b_url = "https://www.youtube.com/embed/Vt4Tq89R8u0?autoplay=1" //humanity2 
+    var c_url = "https://www.youtube.com/embed/cbuZfY2S2UQ?autoplay=1"  //humanity3
+    var d_url = "https://www.youtube.com/embed/Mw5mAozjC6M?autoplay=1" //humanity4
+    var e_url = "https://www.youtube.com/embed/esh8mNoPxGE?autoplay=1" //humanity5
+    var f_url = "https://www.youtube.com/embed/4iAABDI2Y-c?autoplay=1" //humanity6
+    var g_url = "https://www.youtube.com/embed/Jtauh8GcxBY?autoplay=1" //humanity7
+    var h_url = "https://www.youtube.com/embed/jO2viLEW-1A?autoplay=1" //humanity8
+    var i_url = "https://www.youtube.com/embed/sXJ2hajo6rw?autoplay=1" //humanity9
+    var j_url = "https://www.youtube.com/embed/U0V1y2p1sgs?autoplay=1" //humanity10
 
     var songList = new Array(a_url, b_url, c_url, d_url, e_url, f_url, g_url, h_url, i_url, j_url)
 
@@ -106,16 +106,16 @@
       $('#ytplayer').attr('src',songList[type])
 
       switch(type){
-          case 0 : $('#song-title').html("Sparkle"); break;
-          case 1 : $('#song-title').html("Keep Changing the World"); break;
-          case 2 : $('#song-title').html("Just the Two of Us"); break;
-          case 3 : $('#song-title').html("Melting"); break;
-          case 4 : $('#song-title').html("Lookalike"); break;
-          case 5 : $('#song-title').html("ABC Chant"); break;
-          case 6 : $('#song-title').html("Burb"); break;
-          case 7 : $('#song-title').html("Modern"); break;
-          case 8 : $('#song-title').html("Graduation"); break;
-          case 9 : $('#song-title').html("Epiphany"); break;
+          case 0 : $('#song-title').html("Cradles"); break;
+          case 1 : $('#song-title').html("Just Hold On"); break;
+          case 2 : $('#song-title').html("lofi type beat"); break;
+          case 3 : $('#song-title').html("Strawberries & Cigarettes"); break;
+          case 4 : $('#song-title').html("Saturday Nights"); break;
+          case 5 : $('#song-title').html("Tell me you do too"); break;
+          case 6 : $('#song-title').html("Before You Go"); break;
+          case 7 : $('#song-title').html("Come thru"); break;
+          case 8 : $('#song-title').html("Good night n go"); break;
+          case 9 : $('#song-title').html("Who do you love"); break;
 
       }
 
@@ -163,7 +163,7 @@
   <!-- id, class = 선택자(Selector) -->
   <div class="player">
 
-    <h1 id="song-title" style="font-size: 3em; cursor: help;" >Sparkle</h1>
+    <h1 id="song-title" style="font-size: 3em; cursor: help;" >Cradles</h1>
     
     <!-- box-shadow : length > (x, y, blur, spread), inset(선택하면 안쪽에 그림자), color -->
 
@@ -172,7 +172,7 @@
 
 
       <div class="contents" style="width: 315px; float: left;">
-        <iframe id="ytplayer" width="315" height="360" src="https://www.youtube.com/embed/K_7To_y9IAM?autoplay=1"></iframe>
+        <iframe id="ytplayer" width="315" height="360" src="https://www.youtube.com/embed/OE140zsQ08I?autoplay=1"></iframe>
       </div>
 
       <!-- padding : 안쪽 여백 -->
@@ -181,16 +181,16 @@
         <h2 class="song-title">Playlist</h2>
           
         <div id="playlist">
-          <button type="button" id="song-0" class="playlist-btn song-active" onclick="nextSong(0)">Sparkle</button>
-          <button type="button" id="song-1" class="playlist-btn" onclick="nextSong(1)">Keep Changing the World</button>
-          <button type="button" id="song-2" class="playlist-btn" onclick="nextSong(2)">Just the Two of Us</button>
-          <button type="button" id="song-3" class="playlist-btn" onclick="nextSong(3)">Melting</button>
-          <button type="button" id="song-4" class="playlist-btn" onclick="nextSong(4)">Lookalike</button>
-          <button type="button" id="song-5" class="playlist-btn" onclick="nextSong(5)">ABC Chant</button>
-          <button type="button" id="song-6" class="playlist-btn" onclick="nextSong(6)">Burb</button>
-          <button type="button" id="song-7" class="playlist-btn" onclick="nextSong(7)">Modern</button>
-          <button type="button" id="song-8" class="playlist-btn" onclick="nextSong(8)">To be happy</button>
-          <button type="button" id="song-9" class="playlist-btn" onclick="nextSong(9)">At My Worst</button>
+          <button type="button" id="song-0" class="playlist-btn song-active" onclick="nextSong(0)">Cradles</button>
+          <button type="button" id="song-1" class="playlist-btn" onclick="nextSong(1)">Just Hold On</button>
+          <button type="button" id="song-2" class="playlist-btn" onclick="nextSong(2)">lofi type beat</button>
+          <button type="button" id="song-3" class="playlist-btn" onclick="nextSong(3)">Strawberries & Cigarettes</button>
+          <button type="button" id="song-4" class="playlist-btn" onclick="nextSong(4)">Saturday Night</button>
+          <button type="button" id="song-5" class="playlist-btn" onclick="nextSong(5)">Tell me you do too</button>
+          <button type="button" id="song-6" class="playlist-btn" onclick="nextSong(6)">Before You Go</button>
+          <button type="button" id="song-7" class="playlist-btn" onclick="nextSong(7)">Come thru</button>
+          <button type="button" id="song-8" class="playlist-btn" onclick="nextSong(8)">Good night n go</button>
+          <button type="button" id="song-9" class="playlist-btn" onclick="nextSong(9)">Who do you love</button>
 
         </div>
       </div>
@@ -292,6 +292,5 @@
     </div>
 
     <script src="http://www.youtube.com/player_api"></script>
-    
 </body>
 </html>
